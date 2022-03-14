@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Chat box</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/login_style.css">
+    <link rel="stylesheet" href="/css/home_style.css">
+    <link rel="stylesheet" href="/css/userinfo__style.css">
+</head>
+
+<body>
+<div class="app">
+    <input type="checkbox" name="modal-login" id="modal-login" hidden>
+    <label for="modal-login" class="app__login">
+        <div class="modal"></div>
+        <!-- Login: app-login-switch__login--active ; Register: app-login-switch__register--active -->
+        <label for="none" class="app__login-wrapper app-login-switch__login--active">
+            <div class="app-login__switch">
+                <div class="app-login-switch__login">Login</div>
+                <div class="app-login-switch__register">Register</div>
+            </div>
+            <div class="app-login__text hide--register">
+                <h2>Sign In Here</h2>
+                <p>Log into your account in just a few simple steps.</p>
+            </div>
+            <div class="app-login__text hide--login">
+                <h2>Register Now!</h2>
+                <p>Join the ChatBox today & chat with your friend.</p>
+            </div>
+            <div class="app-login__form">
+                <div class="app-login-form__input">
+                    <i class="app-login-form__icon fa-solid fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="app-login-form__input hide--login">
+                    <i class="app-login-form__icon fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="app-login-form__input">
+                    <i class="app-login-form__icon fa-solid fa-key"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="app-login-form__input hide--login">
+                    <i class="app-login-form__icon fa-solid fa-key"></i>
+                    <input type="password" id="re-password" name="re-password" placeholder="Repeat Password"
+                           required>
+                </div>
+                <div class="app-login-form__text hide--register">
+                    <input type="checkbox" name="remember-pass" id="remember-pass">
+                    <label for="remember-pass">Remember me</label>
+                </div>
+                <div class="app-login-form__text hide--login">
+                    <input type="checkbox" name="agree-terms" id="agree-terms">
+                    <label for="agree-terms">Agree to a terms of ChatBox.</label>
+                </div>
+                <a class="app-login-form__link hide--register" href="#">You are forgot password?</a>
+                <div id="login-submit" class="app-login-form__submit hide--register">
+                    <span>SIGN IN</span>
+                </div>
+                <div id="" class="app-login-form__submit hide--login">
+                    <span>SIGN UP</span>
+                </div>
+            </div>
+            <div class="app-login__login-with">
+                <p>Sign in with Facebook or Google+</p>
+                <div class="app-login__login-with-wrapper">
+                    <div class="app-login__login-with-facebook">
+                        <i class="app-login-login-with__icon fa-brands fa-facebook-f"></i>
+                        Facebook
+                    </div>
+                    <div class="app-login__login-with-google">
+                        <i class="app-login-login-with__icon fa-brands fa-google-plus-g"></i>
+                        Google+
+                    </div>
+                </div>
+            </div>
+        </label>
+    </label>
+
+    <header class="app__header">
+        <div class="grid">
+            <div class="app__header-wrapper">
+                <div class="app-header__left">
+                    <a href="#" class="app-header-left__logo">
+                        <i class="app-header-left__logo-icon fa-solid fa-comment-sms"></i>
+                        ChatBox
+                    </a>
+                    <div class="app-header-left__search">
+                        <input type="text" id="txt-search" name="txt-search"
+                               placeholder="What you are looking for...">
+                        <span class="app-header-left-search__submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Search
+                            </span>
+                    </div>
+                    <ul class="app-header-left__navbar">
+                        <li class="app-header-left-navbar__item">
+                            <a href="#">Start</a>
+                        </li>
+                        <li class="app-header-left-navbar__item">
+                            <a href="#">Docs</a>
+                        </li>
+                        <li class="app-header-left-navbar__item">
+                            <a href="#">Plans</a>
+                        </li>
+                        <li class="app-header-left-navbar__item">
+                            <a href="#">Support</a>
+                        </li>
+                        <li class="app-header-left-navbar__item">
+                            <a href="#">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="app-header__right">
+                    <!-- Not login and login -->
+                    <label for="modal-login" class="app-header-right__login">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </label>
+                    <!-- <div class="app-header-right__user">
+                        <div class="app-header-right__user-wrapper">
+                            <div class="app-header-right-user__avatar">
+                                <img src="./assets/images/users/user.jpg" alt="user">
+                            </div>
+                            <div class="app-header-right-user__name">I'MKAI</div>
+                            <ul class="app-header-right__user-profile">
+                                <li>View Profile</li>
+                                <li onclick="logout()">Logout</li>
+                            </ul>
+                        </div>
+                        <div class="app-header-right-user__logout" onclick="logout()">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="app__body">
+        <div class="grid">
+            <div class="row">
+                <div class="col l-3">
+                    <!-- <div class="app-body__navbar">
+                        <div class="app-body-navbar__header">
+                            <div class="app-header-body-navbar-header__text">
+                                <h2>Chat</h2>
+                                <input type="checkbox" name="modal-create-group" id="modal-create-group" hidden>
+                                <label for="modal-create-group"><i class="fa-solid fa-user-plus"></i></label>
+                                <i class="fa-solid fa-user-group"></i>
+                                <i class="fa-solid fa-shield"></i>
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <label for="modal-create-group" class="app-header-body-navbar__modal-group">
+                                    <label for="none" class="app-header-body-navbar__modal-group-wrapper">
+                                        <h2>Create new group</h2>
+                                        <div class="app-header-body-navbar-modal-group__name">
+                                            <h4>Enter your group name</h4>
+                                            <input type="text" id="name-group" name="name-group"
+                                                placeholder="Group name...">
+                                        </div>
+                                        <div class="app-header-body-navbar-modal-group__user">
+                                            <h4>Enter member</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>Ana Pink</span>
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </li>
+                                                <li>
+                                                    <span>Ana Pink AAN isauhs aisuha asj</span>
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </li>
+                                            </ul>
+                                            <input type="text" id="name-user" name="name-user"
+                                                placeholder="Member name...">
+                                        </div>
+                                        <div class="app-header-body-navbar-modal-group__favourite">
+                                            <h4>Favourites</h4>
+                                            <ul>
+                                                <li>
+                                                    <img src="/images/users/user1.jpg" alt="user1">
+                                                    Ana Pink
+                                                </li>
+                                                <li>
+                                                    <img src="/images/users/user1.jpg" alt="user1">
+                                                    Ana Pink
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="app-header-body-navbar-modal-group__submit app__button">Create</span>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="app-header-body-navbar-header__search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="user-id" name="user-id"
+                                    placeholder="Search user on ChatBox...">
+                            </div>
+                        </div>
+                        <div class="app-body-navbar__content">
+                            <ul class="app-body-navbar-content__list-users">
+                                <li class="app-body-navbar-content__item-user item-user--message-unread">
+                                    <img class="app-body-navbar-content-item-user__img"
+                                        src="/images/users/user1.jpg" alt="user">
+                                    <div class="app-body-navbar-content-item-user__name">
+                                        <h2>Gia Bảo</h2>
+                                        <p>Đang làm gì đấy? Đang làm gì đấy? Đang làm gì đấy?</p>
+                                    </div>
+                                    <div class="app-body-navbar-content-item-user__time">3 min</div>
+                                    <div class="app-body-navbar-content-item-user__unread">●</div>
+                                </li>
+                                <li class="app-body-navbar-content__item-user">
+                                    <img class="app-body-navbar-content-item-user__img"
+                                        src="/images/users/user1.jpg" alt="user">
+                                    <div class="app-body-navbar-content-item-user__name">
+                                        <h2>Gia Bảo</h2>
+                                        <p>Đang làm gì đấy?</p>
+                                    </div>
+                                    <div class="app-body-navbar-content-item-user__time">3 min</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <div class="app-body__navbar">
+                        <img src="/images/web/hero-icon-bg.svg" alt="">
+                    </div>
+                </div>
+                <div class="col l-9">
+                    <!-- <div class="app-body__content">
+                        <div class="app-body-content__text">Change your profile</div>
+                        <div class="app-body-content__body">
+                            <div class="row">
+                                <div class="col l-7">
+                                    <div class="app-body-content-body__left">
+                                        <div class="app-body-content-body__text">Username: </div>
+                                        <div class="app-body-content-body__input">
+                                            <input type="text" name="username-info" id="username-info" placeholder="Username">
+                                        </div>
+                                        <div class="app-body-content-body__text">Password: </div>
+                                        <div class="app-body-content-body__input">
+                                            <input type="text" name="password-info" id="password-info" placeholder="Password">
+                                            <span class="app-body-content-body__input-btn">Change password</span>
+                                        </div>
+                                        <div class="app-body-content-body__text">Name: </div>
+                                        <div class="app-body-content-body__input">
+                                            <input type="text" name="name" id="name" placeholder="Name">
+                                        </div>
+                                        <div class="app-body-content-body__gender">
+                                            <span>Gender: </span> &nbsp; &nbsp;
+                                            <input type="radio" id="male" name="gender"><label for="male">Male</label> &nbsp;
+                                            <input type="radio" id="female" name="gender"><label for="female">Female</label> &nbsp;
+                                            <input type="radio" id="otherGender" name="gender" checked><label for="otherGender">Other</label>
+                                        </div>
+                                        <div class="app-body-content-body__text">Email: </div>
+                                        <div class="app-body-content-body__input">
+                                            <input type="email" name="email-info" id="email-info" placeholder="Email">
+                                        </div>
+                                        <div class="app-body-content-body__text">Phone: </div>
+                                        <div class="app-body-content-body__input">
+                                            <input type="text" name="phone-info" id="phone-info" placeholder="Phone">
+                                        </div>
+                                        <div class="app-body-content-body__text">Birthday: </div>
+                                        <div class="app-body-content-body__input">
+                                            <input type="date" name="birth-info" id="birth-info" placeholder="Birth">
+                                        </div>
+                                        <div><span class="app-body-content-body__submit app__button" onclick="saveProfile()">Save profile</span></div>
+                                    </div>
+                                </div>
+                                <div class="col l-5">
+                                    <div class="app-body-content-body__right">
+                                        <div class="app-body-content-body__img">
+                                            <img id="image-change" src="/images/users/user.jpg" alt="user">
+                                        </div>
+                                        <input type="file" name="file-input" id="file-input" hidden>
+                                        <span class="app-body-content-body__btn app__button" onclick="chooseFile()">Choose image</span>
+                                        <div><span class="app-body-content-body__submit app__button" onclick="saveAvatar()">Save avatar</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="app-body__content">
+                        <div class="app-body-content__start">
+                            <img src="/images/web/hero-icon-bg.svg" alt="">
+                            <i class="fa-solid fa-comment-sms"></i>
+                            <h2>Bringing people closer <b>together.</b></h2>
+                            <h4>At <b>ChatBox</b> you can chatt, call, video call, and more...</h4>
+                            <label for="modal-login" class="app__button">
+                                <i class="fa-solid fa-earth-asia"></i>
+                                <span>Start for free</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app__footer">
+        <span>Powered by</span>
+        <a href="#">© I'MKAI</a>
+    </footer>
+</div>
+
+<div class="toast"></div>
+
+<script src="/js/toast.js"></script>
+<script src="/js/login_main.js"></script>
+<script src="/js/home_main.js"></script>
+<script src="/js/userprofile_main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+.app {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.app__login {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.app__login-wrapper {
+    z-index: 2;
+    background-color: var(--secondary-color);
+    width: 400px;
+    max-width: 90%;
+    border-radius: 2px;
+    overflow: hidden;
+    animation: GrowXY .15s ease;
+}
+
+.app-login__switch {
+    display: flex;
+}
+
+.app-login-switch__login,
+.app-login-switch__register {
+    flex: 1;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .06);
+    cursor: pointer;
+}
+
+.app-login-switch__login--active .app-login-switch__login,
+.app-login-switch__register--active .app-login-switch__register {
+    background-color: var(--secondary-color);
+}
+
+.app-login__text {
+    padding: 0 24px;
+    margin: 12px 0;
+}
+
+.app-login__text h2 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+.app-login__form {
+    padding: 12px 24px;
+}
+
+.app-login-form__input {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    border-radius: 2px;
+}
+
+.app-login-form__input + .app-login-form__input {
+    margin-top: 12px;
+}
+
+.app-login-form__icon {
+    width: 46px;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.app-login-form__input > input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+}
+
+.app-login-form__text {
+    display: flex;
+    margin: 12px 0;
+}
+
+.app-login-form__text label {
+    width: 100%;
+    cursor: pointer;
+}
+
+.app-login-form__link {
+    color: var(--white-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.app-login-form__link:hover {
+    text-decoration: underline;
+}
+
+.app-login-form__submit {
+    margin: 12px 0;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.app-login-form__submit:hover {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.app-login__login-with p {
+    padding: 0 24px;
+}
+
+.app-login__login-with-wrapper {
+    display: flex;
+    margin-top: 12px;
+}
+
+.app-login__login-with-facebook,
+.app-login__login-with-google {
+    flex: 1;
+    height: 52px;
+    line-height: 52px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.app-login-login-with__icon {
+    font-size: 1.6rem;
+}
+
+.app-login__login-with-facebook {
+    background-color: #3b5998;
+}
+
+.app-login__login-with-google {
+    background-color: #dd4859;
+}
+
+.app-login__login-with-facebook:hover,
+.app-login__login-with-google:hover {
+    filter: brightness(1.1);
+}
+
+.app-login-switch__login--active .hide--login {
+    display: none;
+}
+
+.app-login-switch__register--active .hide--register {
+    display: none;
+}
+
+#modal-login:checked ~ .app__login {
+    display: flex;
+}
